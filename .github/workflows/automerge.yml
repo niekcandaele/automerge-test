@@ -23,11 +23,11 @@ jobs:
     steps:
       - name: debug vars
         env:
-          STUFF: ${{ toJSON(github) }}
-        run: echo "$STUFF"
+          TITLE: ${{ github.event.pull_request.title }}
+        run: echo "$TITLE"
       - name: automerge
         uses: "pascalgn/automerge-action@v0.13.1"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_FILTER_AUTHOR: 'niekcandaele'
-
+        if: ${{ contains(deps-dev, github.event.pull_request.title) }}
