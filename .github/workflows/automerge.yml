@@ -21,6 +21,10 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
+      - name: debug vars
+        env:
+          STUFF: ${{ toJSON(github) }}
+        run: echo "$STUFF"
       - name: automerge
         uses: "pascalgn/automerge-action@v0.13.1"
         env:

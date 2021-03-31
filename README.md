@@ -13,3 +13,6 @@ Run pascalgn/automerge-action@v0.13.1
 2021-03-31T10:53:49.875Z INFO  PR author 'niekcandaele' does not match filter: jos
 ```
 
+---
+
+Set branch protection rules to make sure checks pass first!
