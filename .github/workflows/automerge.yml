@@ -25,6 +25,7 @@ jobs:
         env:
           TITLE: ${{ github.event.pull_request.title }}
         run: echo "$TITLE"
+      - run: echo "${{ contains('deps-dev', github.event.pull_request.title) }}"
       - name: automerge
         uses: "pascalgn/automerge-action@v0.13.1"
         env:
